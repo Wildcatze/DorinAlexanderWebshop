@@ -66,7 +66,6 @@ public class AccountController {
         _account.setCity(account.getCity());
         _account.setUsername(account.getUsername());
         _account.setPassword(account.getPassword());
-        _account.setCategoryId(account.getCategoryId());
         return new ResponseEntity<>(accountRepository.save(_account), HttpStatus.OK);
     }
 
@@ -76,5 +75,11 @@ public class AccountController {
         accountRepository.deleteById(accountId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @GetMapping("/displayListing")
+    public String displayListing(){
+        return "/displayListings";
+    }
 
 }
+
+
