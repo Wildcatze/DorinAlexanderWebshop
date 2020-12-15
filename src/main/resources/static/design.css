@@ -293,16 +293,6 @@ td{
     max-height: 200px;
     text-overflow: ellipsis;
 }
-
-/*#placeFooter{*/
-/*    width: 100%;*/
-/*    height: min-content;*/
-/*    padding-top: 15%;*/
-/*    margin-bottom: 0;*/
-/*    border-bottom: 0;*/
-/*    padding-bottom: 0;*/
-/*}*/
-
 footer{
     margin-top: 10%;
     margin-bottom: 0;
@@ -319,35 +309,6 @@ footer{
     padding-bottom: 0.9%;
     padding-top: 0.9%;
 }
-
-#btn-ShowArticles{
-    background-color: transparent;
-    margin-left: 6%;
-    margin-right: 6%;
-    color: lightgray;
-    border: none;
-    font-family: "Jazz LET", sans-serif;
-    font-weight: bold;
-    width: 160px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 30px;
-}
-
-#btn-ShowAbout{
-    background-color: transparent;
-    margin-left: 6%;
-    margin-right: 6%;
-    color: lightgray;
-    border: none;
-    font-family: "Jazz LET", sans-serif;
-    font-weight: bold;
-    width: 160px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 30px;
-}
-
 #btn-ShowContact{
     background-color: transparent;
     margin-left: 6%;
@@ -361,7 +322,6 @@ footer{
     border-radius: 10px;
     font-size: 30px;
 }
-
 #btn-BackOnTop{
     background-color: transparent;
     margin-left: 6%;
@@ -379,5 +339,31 @@ footer{
     alignment: left;
     background-size: contain;
 }
-
-/*violet shades: #1a0034  #5C246E  #FFAE42*/
+#btn-CreateListing{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #696969;
+    color: #F0E68C;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 55px;
+    border-radius: 7px;
+    font-size: 20px;
+}
+#btn-ShowListings{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #696969;
+    color: #F0E68C;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 55px;
+    border-radius: 7px;
+    font-size: 20px;
+}
