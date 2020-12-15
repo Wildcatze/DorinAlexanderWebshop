@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Webshop</title>
+    <link rel="stylesheet" href="/static/design.css" th:href="@{/design.css}">
+</head>
+<body>
+<div id="TOP"><div th:replace="menu :: menu_template"></div></div>
+<div id="separation3"></div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div style="width:20%;margin-left:40%;margin-right:40%;">
+    <p>Welcome to the R.A.D.A. online webshop.</p>
+    <p>Here you can buy or sell your PC & Laptop components.</p>
+    <p>How does it work?</p>
+    <p>     - anyone can post their articles;</p>
+    <p>     - if you see something you like, contact the seller;</p>
+    <p>What does R.A.D.A. stand for you ask?</p>
+    <p>It stands for the developer's names:</p>
+    <p>Radu - Alexandru - Dorin - Alexander</p>
+</div>
+<div id="placeFooter" th:insert="footer :: footer_template"></div>
+</body>
+</html>

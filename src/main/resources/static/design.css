@@ -1,0 +1,383 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: url("libhtbulbs background.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    text-decoration: none;
+    background-color: aliceblue;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+label{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.navigation{
+    font-size: 0;
+    position: center;
+    alignment: center;
+    width: 100%;
+    object-position: center;
+    text-align: center;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    background-color: #696969;
+    opacity: 95%;
+}
+/*This is the class that arranges the items in the navigation bar
+from here ... */
+#separation{
+    overflow: hidden;
+    width: 100%;
+}
+
+#c1{
+    float: left;
+    margin-left: 1%;
+    margin-right: 8.7%;
+    width: 100%;
+    background-image: url("Shnitzel.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    alignment: center;
+}
+#c2{
+    float: left;
+    width: 70%;
+    padding-top: 0.5%;
+}
+#c3{
+    float: right;
+    margin-right: 1%;
+    width: 11%;
+    margin-top: 1.5%;
+}
+#c4{
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 20px;
+    float: right;
+    margin-top: 0.7%;
+    margin-right: 1%;
+    width: 14%;
+    height: min-content;
+}
+/*  until here */
+
+#separation\.about{
+    height: min-content;
+    overflow: hidden;
+    width: 100%;
+    background-color: transparent;
+}
+#c5{
+    float: left;
+    margin-left: 2%;
+    width: 30%;
+}
+#c6{
+    float: left;
+    margin-left: 3%;
+    width: 30%;
+    margin-right: 3%;
+}
+#c7{
+    float: left;
+    width: 30%;
+    margin-right: 2%;
+}
+
+#separation2{
+    overflow: hidden;
+    width: 100%;
+    background-color: lightgray;
+    opacity: 85%;
+    padding-bottom: 0.5%;
+}
+#c1\.2{
+    float: left;
+    margin-left: 1%;
+    width: 6%;
+
+}
+#c2\.2{
+    float: right;
+    margin-right: 1%;
+    width: 3%;
+}
+#c3\.2{
+    float: right;
+    margin-right: 1%;
+    width: 3%;
+}
+#c4\.2{
+    float: right;
+    margin-right: 1%;
+    width: 15%;
+}
+/*THIS is the front page registration paragraph */
+#separation3{
+    overflow: hidden;
+    width: 100%;
+    background-color: transparent;
+    opacity: 85%;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+}
+#registerColumn{
+    float: right;
+    margin-right: 1%;
+    background-color: lightgray;
+    border-radius: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 520px;
+}
+#registerParagraph{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    color: darkslategray;
+    font-weight: bold;
+    text-align: right;
+    background-image: url("smiley register.png");
+    background-repeat: no-repeat;
+    alignment: left;
+    background-size: 6% 100%;
+}
+/*Until here*/
+
+.login{
+    position: absolute;
+    align-items: center;
+    width: fit-content;
+
+}
+
+/*Starting from here I design the 2 row split display*/
+.column1{
+    float: left;
+    width: 20%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+.column2 {
+    float: left;
+    width: 40%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.column3{
+    float: left;
+    width: 20%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+.column{
+    float: left;
+    width: 35%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row{
+    position: center;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+/*Until here*/
+
+h1{
+    text-align: center;
+    background: transparent;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+p{
+    font-family: "Jazz LET", sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    text-align: center;
+    color: #F0E68C;
+}
+
+p1{
+    font-family: "Jazz LET", sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    text-align: center;
+    color: 	#F0E68C;
+}
+
+table{
+    text-align: center;
+    color: black;
+    height: fit-content;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid black;
+}
+thead{
+    text-align: center;
+    color: lightgray;
+    height: fit-content;
+    background-color: darkslategray;
+    opacity: 95%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+tbody{
+    height: fit-content;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    text-align: center;
+    color: black;
+    opacity: 95%;
+}
+
+th{
+    height: fit-content;
+    text-align: center;
+    color: lightgray;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-decoration-color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+tr{
+    height: fit-content;
+    text-align: center;
+    color: black;
+}
+
+td{
+    height: fit-content;
+    text-align: center;
+    color: black;
+}
+
+#showArticles{
+    position: center;
+    text-align: center;
+    alignment: center;
+    color: black;
+    display: block;
+    overflow: hidden;
+    height: auto;
+    min-height: 90px;
+    max-height: 200px;
+    text-overflow: ellipsis;
+}
+
+/*#placeFooter{*/
+/*    width: 100%;*/
+/*    height: min-content;*/
+/*    padding-top: 15%;*/
+/*    margin-bottom: 0;*/
+/*    border-bottom: 0;*/
+/*    padding-bottom: 0;*/
+/*}*/
+
+footer{
+    margin-top: 10%;
+    margin-bottom: 0;
+    border-bottom: 0;
+    color: lightgray;
+    width: 100%;
+    position: relative;
+    float: bottom;
+    bottom: 0;
+    alignment: center;
+    text-align: center;
+    background-color: #696969;
+    opacity: 85%;
+    padding-bottom: 0.9%;
+    padding-top: 0.9%;
+}
+
+#btn-ShowArticles{
+    background-color: transparent;
+    margin-left: 6%;
+    margin-right: 6%;
+    color: lightgray;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#btn-ShowAbout{
+    background-color: transparent;
+    margin-left: 6%;
+    margin-right: 6%;
+    color: lightgray;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#btn-ShowContact{
+    background-color: transparent;
+    margin-left: 6%;
+    margin-right: 6%;
+    color: 	#F0E68C;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#btn-BackOnTop{
+    background-color: transparent;
+    margin-left: 6%;
+    margin-right: 6%;
+    color: 	#F0E68C;
+    border: none;
+    font-family: "Jazz LET", sans-serif;
+    font-weight: bold;
+    width: 280px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-image: url("up logo.png");
+    background-repeat: no-repeat;
+    alignment: left;
+    background-size: contain;
+}
+
+/*violet shades: #1a0034  #5C246E  #FFAE42*/
