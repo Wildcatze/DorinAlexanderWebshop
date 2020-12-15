@@ -16,7 +16,6 @@ public class Account {
     private String city;
     private String username;
     private String password;
-    private int categoryId;
 
     @Id
     @Column(name = "account_id", nullable = false)
@@ -118,16 +117,6 @@ public class Account {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "category_id", nullable = true)
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -135,7 +124,6 @@ public class Account {
         Account account = (Account) o;
         return accountId == account.accountId &&
                 zip == account.zip &&
-                categoryId == account.categoryId &&
                 Objects.equals(firstName, account.firstName) &&
                 Objects.equals(secondName, account.secondName) &&
                 Objects.equals(phoneNumber, account.phoneNumber) &&
@@ -148,6 +136,6 @@ public class Account {
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, firstName, secondName, phoneNumber, email, zip, district, city, username, password, categoryId);
+        return Objects.hash(accountId, firstName, secondName, phoneNumber, email, zip, district, city, username, password);
     }
 }

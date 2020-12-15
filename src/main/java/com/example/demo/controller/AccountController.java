@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Account;
 import com.example.demo.repository.AccountRepository;
-import com.example.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +23,7 @@ public class AccountController {
     AccountRepository accountRepository;
 
     //wired to the Repository
-    @Autowired
-    CategoryRepository categoryRepository;
-
-
+    
     //All Accounts
     @GetMapping("/accounts")
     public ResponseEntity<List<Account>> getAllAccounts(@RequestParam(required = false)String id){
