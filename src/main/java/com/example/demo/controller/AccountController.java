@@ -75,10 +75,7 @@ public class AccountController {
         accountRepository.deleteById(accountId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @GetMapping("/displayListing")
-    public String displayListing(){
-        return "/displayListings";
-    }
+
 
 }
 
