@@ -23,7 +23,7 @@ public class AccountController {
     AccountRepository accountRepository;
 
     //wired to the Repository
-    
+
     //All Accounts
     @GetMapping("/accounts")
     public ResponseEntity<List<Account>> getAllAccounts(@RequestParam(required = false)String id){
@@ -64,8 +64,6 @@ public class AccountController {
         _account.setZip(account.getZip());
         _account.setDistrict(account.getDistrict());
         _account.setCity(account.getCity());
-        _account.setUsername(account.getUsername());
-        _account.setPassword(account.getPassword());
         return new ResponseEntity<>(accountRepository.save(_account), HttpStatus.OK);
     }
 

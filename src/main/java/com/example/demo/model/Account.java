@@ -14,8 +14,6 @@ public class Account {
     private int zip;
     private String district;
     private String city;
-    private String username;
-    private String password;
 
     @Id
     @Column(name = "account_id", nullable = false)
@@ -97,26 +95,6 @@ public class Account {
         this.city = city;
     }
 
-    @Basic
-    @Column(name = "username", nullable = false, length = 45)
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Basic
-    @Column(name = "password", nullable = false, length = 45)
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -129,13 +107,13 @@ public class Account {
                 Objects.equals(phoneNumber, account.phoneNumber) &&
                 Objects.equals(email, account.email) &&
                 Objects.equals(district, account.district) &&
-                Objects.equals(city, account.city) &&
-                Objects.equals(username, account.username) &&
-                Objects.equals(password, account.password);
+                Objects.equals(city, account.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, firstName, secondName, phoneNumber, email, zip, district, city, username, password);
+        return Objects.hash(accountId, firstName, secondName, phoneNumber, email, zip, district, city);
     }
 }
+
+
