@@ -24,7 +24,7 @@ export default class Listing extends Component {
     }
 
     componentDidMount() {
-        this.getlisting(this.props.match.params.id);
+        this.getListing(this.props.match.params.id);
     }
 
     onChangeTitle(e) {
@@ -51,10 +51,10 @@ export default class Listing extends Component {
         }));
     }
 
-    getlisting(id) {
+    getListing(id) {
         //http.get("/listings/" + id, { headers: http.authHeader() });
         http
-            .get("/listings/" + id, { headers: http.authHeader() })
+            .get("/listings/" + id)
             .then((response) => {
                 this.setState({
                     currentlisting: response.data,
