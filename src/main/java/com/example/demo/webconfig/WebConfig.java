@@ -13,9 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins(
-                        "http://localhost:8081",
-                        "http://localhost:3000",
-                        "https://swc3-react-frontend.herokuapp.com")
+                        "http://localhost:8081/",
+                        "http://localhost:3000")
                 //.allowedMethods("PUT", "DELETE")
                 //.allowedHeaders("header1", "header2", "header3")
                 //.exposedHeaders("header1", "header2")

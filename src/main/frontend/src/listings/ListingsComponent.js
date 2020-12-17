@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import http from "../service/httpservice";
-import axios from "axios";
 import {Link} from "react-router-dom";
 
 
@@ -64,9 +63,9 @@ export default class ListingsList extends Component {
       });
     }
   
-    setActiveListing(tutorial, index) {
+    setActiveListing(listing, index) {
       this.setState({
-        currentListing: tutorial,
+        currentListing: listing,
         currentIndex: index,
       });
     }
@@ -158,10 +157,14 @@ export default class ListingsList extends Component {
             <ul className="list-group">
               {listings && listings.map((tutorial, index) => (
                   <li
+                  className={"list-group-item" + (index===currentIndex ? "active" : "")}
+                    onClick={() => this.setActiveListing(tutorial, index)}
                     key={index}
                   >
                     {tutorial.title}
+                   <p> {tutorial.price}</p>
                   </li>
+                
                 ))}
             </ul>
   
@@ -203,12 +206,12 @@ export default class ListingsList extends Component {
                   Edit
                 </Link>
               </div>
-            ) : (
+            ): (
               <div>
                 <br />
                 <p>Please click on a Tutorial...</p>
               </div>
-            )}
+            ) }
           </div>
         </div>
       );
