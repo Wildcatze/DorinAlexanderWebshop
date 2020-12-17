@@ -33,8 +33,8 @@ public class SearchBarController {
     //Listing Search
     @GetMapping("/listings")
     public ResponseEntity<Map<String, Object>> getPageOfListings(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "3") int size) { //Change The Default Size to bigger once we have more listings
+            @RequestParam(name = "page",defaultValue = "0") int page,
+            @RequestParam(name = "size",defaultValue = "1") int size) { //Change The Default Size to bigger once we have more listings
 
         Pageable paging = PageRequest.of(page, size);
 
@@ -46,10 +46,10 @@ public class SearchBarController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
         Map<String, Object> response = new HashMap<>();
-        response.put("Total Listings", pageListings.getTotalElements());
-        response.put("Listings", listings);
-        response.put("Current Page", pageListings.getNumber());
-        response.put("Total Pages", pageListings.getTotalPages());
+        response.put("totalListings", pageListings.getTotalElements());
+        response.put("listings", listings);
+        response.put("currentPage", pageListings.getNumber());
+        response.put("totalPages", pageListings.getTotalPages());
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
@@ -73,10 +73,10 @@ public class SearchBarController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
         Map<String, Object> response = new HashMap<>();
-        response.put("Total Listings", pageListings.getTotalElements());
-        response.put("Listings", listings);
-        response.put("Current Page", pageListings.getNumber());
-        response.put("Total Pages", pageListings.getTotalPages());
+        response.put("totalListings", pageListings.getTotalElements());
+        response.put("listings", listings);
+        response.put("currentPage", pageListings.getNumber());
+        response.put("totalPages", pageListings.getTotalPages());
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
