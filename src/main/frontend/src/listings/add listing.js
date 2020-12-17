@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import ListingDataService from "../../services/listing.service";
-import http from "../../services/httpService";
+import http from "../service/httpservice";
 
 export default class Listing extends Component {
     constructor(props) {
