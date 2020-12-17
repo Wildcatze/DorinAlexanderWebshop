@@ -6,7 +6,7 @@ import   {Button } from "react-bootstrap";
 import ListingsList from "./listings/ListingsComponent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListingComponent from "./listings/ListingComponent";
-import AddListing from"./listings/add listing";
+import AddListing from"./listings/add listing.component";
 class App extends Component {
 
   
@@ -48,7 +48,7 @@ render() {
                 component={ListingsList}
               />
               <Route exact path="/add" component={AddListing}/>
-              <Route path="/listings/:id" component={ListingComponent} />
+              <Route path="/getOne/:id" component={ListingComponent} />
               <Route path="/customers"  />
               <Route exact path="/login"  />
              <Route exact path="/register" />
