@@ -200,7 +200,7 @@ export default class ListingsList extends Component {
                 </div>
   
                 <Link
-                  to={"/listings/" + currentListing.id}
+                  to={"/getOne/" + currentListing.listing_id}
                   className="badge badge-warning"
                 >
                   Edit

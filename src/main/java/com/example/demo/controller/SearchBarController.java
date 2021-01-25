@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 //Pagination, Sorting & Filtering
 @RestController
@@ -34,7 +35,7 @@ public class SearchBarController {
     @GetMapping("/listings")
     public ResponseEntity<Map<String, Object>> getPageOfListings(
             @RequestParam(name = "page",defaultValue = "0") int page,
-            @RequestParam(name = "size",defaultValue = "1") int size) { //Change The Default Size to bigger once we have more listings
+            @RequestParam(name = "size") int size) { //Change The Default Size to bigger once we have more listings
 
         Pageable paging = PageRequest.of(page, size);
 
@@ -80,7 +81,43 @@ public class SearchBarController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
+    }
+    @GetMapping("/getOne/{listing_id}")
+    public ResponseEntity<Listing> getListingById(@PathVariable("listing_id") int listingId) {
+        Optional<Listing> _listing = listingRepository.findById(listingId);
+        return new ResponseEntity<>(_listing.get(), HttpStatus.OK);
+    }
 
+    //Create Listing
+    @PostMapping("/create")
+    public ResponseEntity<Listing> createListing(@RequestBody Listing listing) {
+        Listing _listing = listingRepository.save(listing);
+        return new ResponseEntity<>(_listing, HttpStatus.CREATED);
+    }
+
+    //Update Listing Fields By Id
+    @PutMapping("/update/{listingId}")
+    public ResponseEntity<Listing> updateListing(@PathVariable("listingId") int listingId, @RequestBody Listing listing) {
+        Optional<Listing> listingData = listingRepository.findById(listingId);
+        Listing _listing = listingData.get();
+        _listing.setDescription(listing.getDescription());
+        _listing.setTitle(listing.getTitle());
+        _listing.setItemCondition(listing.getItemCondition());
+        _listing.setPrice(listing.getPrice());
+        _listing.setDate(listing.getDate());
+        _listing.setTypeId(listing.getTypeId());
+        _listing.setAccountId(listing.getAccountId());
+        return new ResponseEntity<>(listingRepository.save(_listing), HttpStatus.OK);
+
+    }
+
+
+
+    //Delete Listing by Id
+    @DeleteMapping("/delete/{listingId}")
+    public ResponseEntity<HttpStatus> deleteListing(@PathVariable("listingId") int listingId) {
+        listingRepository.deleteById(listingId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "listings", schema = "dorin_alexander_webshop", catalog = "")
 public class Listing {
-    private int listingId;
+    private int listing_id;
     private String title;
     private String itemCondition;
     private String description;
@@ -19,14 +19,29 @@ public class Listing {
     private int typeId;
     private int accountId;
 
-    @Id
-    @Column(name = "listing_id", nullable = false)
-    public int getListingId() {
-        return listingId;
+    public Listing() {
     }
 
-    public void setListingId(int listingId) {
-        this.listingId = listingId;
+    public Listing(int listing_id, String title, String itemCondition, String description, String price, LocalDate date, String contactinfo, int typeId, int accountId) {
+        this.listing_id = listing_id;
+        this.title = title;
+        this.itemCondition = itemCondition;
+        this.description = description;
+        this.price = price;
+        this.date = date;
+        this.contactinfo = contactinfo;
+        this.typeId = typeId;
+        this.accountId = accountId;
+    }
+
+    @Id
+    @Column(name = "listing_id", nullable = false)
+    public int getListing_id() {
+        return listing_id;
+    }
+
+    public void setListing_id(int listing_id) {
+        this.listing_id = listing_id;
     }
 
     @Basic
@@ -114,7 +129,7 @@ public class Listing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Listing listing = (Listing) o;
-        return listingId == listing.listingId &&
+        return listing_id == listing.listing_id &&
                 typeId == listing.typeId &&
                 accountId == listing.accountId &&
                 Objects.equals(title, listing.title) &&
@@ -127,6 +142,6 @@ public class Listing {
 
     @Override
     public int hashCode() {
-        return Objects.hash(listingId, title, itemCondition, description, price, date, contactinfo, typeId, accountId);
+        return Objects.hash(listing_id, title, itemCondition, description, price, date, contactinfo, typeId, accountId);
     }
 }

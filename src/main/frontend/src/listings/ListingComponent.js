@@ -13,7 +13,7 @@ export default class ListingComponent extends Component {
 
     this.state = {
       currentListing: {
-        listingId: null,
+        listing_id: null,
         title: "",
         description: "",
         condition: false,
@@ -23,17 +23,20 @@ export default class ListingComponent extends Component {
   }
 
   componentDidMount() {
-    this.getListing(this.props.match.params.listingId);
+    this.getListing(this.props.match.params.id);
+    console.log(this.props.match.params.id);
   }
 
   onChangeTitle(e) {
     const title = e.target.value;
-
+    const description = e.target.value;
     this.setState(function (prevState) {
       return {
         currentListing: {
           ...prevState.currentListing,
           title: title,
+          description:description
+          
         },
       };
     });
@@ -42,18 +45,20 @@ export default class ListingComponent extends Component {
   onChangeDescription(e) {
     const description = e.target.value;
 
-    this.setState((prevState) => ({
+    this.setState(function(prevState){ 
+        return{
       currentListing: {
         ...prevState.currentListing,
         description: description,
       },
-    }));
+    };
+});
   }
 
-  getListing(listingId) {
-    //http.get("/tutorials/" + listingId, { headers: http.authHeader() });
-    http
-      .get("/listings/" + listingId,)
+  getListing(listing_id) {
+
+    //http.get("/tutorials/" + listing_id, { headers: http.authHeader() });
+    http.get("/getOne/" + listing_id)
       .then((response) => {
         this.setState({
           currentListing: response.data,
@@ -67,14 +72,14 @@ export default class ListingComponent extends Component {
 
   updateCondition(status) {
     var data = {
-      listingId: this.state.currentListing.listingId,
+      listing_id: this.state.currentListing.listing_id,
       title: this.state.currentListing.title,
       description: this.state.currentListing.description,
       condition: status,
     };
 
     http
-      .put("/listings/" + this.state.currentListing.listingId)
+      .put("/update/" + this.state.currentListing.listing_id)
       .then((response) => {
         this.setState((prevState) => ({
           currentListing: {
@@ -92,9 +97,8 @@ export default class ListingComponent extends Component {
   updateListing() {
     http
       .put(
-        "/listings/" + this.state.currentListing.listingId,
-        this.state.currentListing,
-        { headers: http.authHeader() }
+        "/update/" + this.state.currentListing.listing_id,
+        this.state.currentListing
       )
       .then((response) => {
         console.log(response.data);
@@ -109,7 +113,7 @@ export default class ListingComponent extends Component {
 
   deleteListing() {
     http
-      .delete("/listings/" + this.state.currentListing.listingId)
+      .delete("/delete/" + this.state.currentListing.listing_id)
       .then((response) => {
         console.log(response.data);
         this.props.history.push("/listings");
@@ -126,6 +130,7 @@ export default class ListingComponent extends Component {
       <div>
         {currentListing ? (
           <div className="edit-form">
+              <h1>{currentListing.listing_id}</h1>
             <h4>Listing</h4>
             <form>
               <div className="form-group">
@@ -133,7 +138,7 @@ export default class ListingComponent extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  listingId="title"
+                  listing_id="title"
                   value={currentListing.title}
                   onChange={this.onChangeTitle}
                 />
@@ -143,7 +148,7 @@ export default class ListingComponent extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  listingId="description"
+                  listing_id="description"
                   value={currentListing.description}
                   onChange={this.onChangeDescription}
                 />

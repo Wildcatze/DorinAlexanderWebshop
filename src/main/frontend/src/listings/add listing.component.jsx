@@ -7,16 +7,22 @@ export default class AddListing extends Component {
         super(props);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeCondition=this.onChangeCondition.bind(this);
+        this.onChangeContactInfo=this.onChangeContactInfo.bind(this);
+        this.onChangePrice=this.onChangePrice.bind(this);
         this.saveListing = this.saveListing.bind(this);
         this.newListing = this.newListing.bind(this);
-
+    
         this.state = {
             id: null,
             title: "",
             description: "",
-            published: false,
-
-            submitted: false,
+            date:"2020-04-24",
+            price: 0,
+            item_condition: "",
+            contactinfo:"",
+            type_id:1,
+            account_id:2,
         };
     }
 
@@ -31,23 +37,49 @@ export default class AddListing extends Component {
             description: e.target.value,
         });
     }
+    onChangePrice(e){
+        this.setState({
+            price:e.target.value,
+        });
+    }
+    onChangeCondition(e){
+        this.setState({
+            item_condition: e.target.value,
+        })
+    }
+    onChangeContactInfo(e){
+        this.setState(
+            {
+                contactinfo: e.target.value,
+            }
+        )
+    }
 
     saveListing() {
         var data = {
             title: this.state.title,
             description: this.state.description,
+            date:this.state.date,
+            price: this.state.price,
+            item_condition: this.state.condition,
+            contactinfo: this.state.contactinfo,
+            type_id:this.state.type_id,
+            account_id:this.state.account_id
         };
 
         http
-            .post("/listings", data, { headers: http.authHeader() }) // http POST request
+            .post("/create", data) // http POST request
             .then((response) => {
                 this.setState({
                     id: response.data.id,
                     title: response.data.title,
                     description: response.data.description,
-                    published: response.data.published,
-
-                    submitted: true,
+                    date:response.data.date,
+                    price: response.data.price,
+                    item_condition: response.data.condition,
+                    contactinfo: response.data.contactinfo,
+                    type_id:response.data.type_id,
+                    account_id:response.data.account_id
                 });
                 console.log(response.data);
             })
@@ -61,9 +93,9 @@ export default class AddListing extends Component {
             id: null,
             title: "",
             description: "",
-            published: false,
-
-            submitted: false,
+            price: 0,
+            item_condition: "",
+            contactinfo:"",
         });
     }
 
@@ -102,6 +134,42 @@ export default class AddListing extends Component {
                                 value={this.state.description}
                                 onChange={this.onChangeDescription}
                                 name="description"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="description">Condition</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="item_condition"
+                                required
+                                value={this.state.condition}
+                                onChange={this.onChangeCondition}
+                                name="item_condition"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="description">Price</label>
+                            <input
+                                type="number"
+                                className="form-control"
+                                id="price"
+                                required
+                                value={this.state.price}
+                                onChange={this.onChangePrice}
+                                name="price"
+                            />
+                        </div>
+                          <div className="form-group">
+                            <label htmlFor="description">Contact Information</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="contactinfo"
+                                required
+                                value={this.state.contactinfo}
+                                onChange={this.onChangeContactInfo}
+                                name="contactinfo"
                             />
                         </div>
 
