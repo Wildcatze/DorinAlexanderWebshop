@@ -24,13 +24,6 @@ public class ListingController {
     @Autowired
     AccountRepository accountRepository;
 
-//    @GetMapping("/displayListings")
-//    public String displayListings (Model model){
-//        model.addAttribute("listing", ListingController.modelListing())
-//        return "/displayListings";
-//    }
-
-
     //All listings
     @GetMapping("/listings")
     public ResponseEntity<List<Listing>> getAllListings(@RequestParam(required = false)String id) {

@@ -10,6 +10,10 @@ let listing = {
   account_id: undefined       //this will be a number
 };
 
+function displayListings(){
+
+}
+
 let listing1 = {
     listing_id: 1,
     title: 'Nvidia RTX 2080Ti',
