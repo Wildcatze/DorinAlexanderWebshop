@@ -6,7 +6,14 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="demo/Hibernate" uuid="55ca74a8-d5ba-4f32-b114-085e0bcd2e8c">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://dorin-alexander-webshop.cw1gtfgn7rkv.us-east-1.rds.amazonaws.com:3306/dorin_alexander_webshop?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</jdbc-url>
     </data-source>
   </component>
 </project>
