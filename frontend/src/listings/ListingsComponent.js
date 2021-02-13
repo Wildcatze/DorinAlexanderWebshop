@@ -40,7 +40,7 @@ export default class ListingsList extends Component {
   
     retrieveListings(currentPage) {
       http
-        .get("/listings?page=" + currentPage+"&size=1")
+        .get("/api/listings?page=" + currentPage+"&size=1")
         .then((response) => {
           //this is the response from web server
           this.setState({
@@ -72,7 +72,7 @@ export default class ListingsList extends Component {
   
     removeAlllistings() {
       http
-        .delete("/listings",)
+        .delete("/api/listings",)
         .then((response) => {
           console.log(response.data);
           this.refreshList();
@@ -84,7 +84,7 @@ export default class ListingsList extends Component {
   
     searchTitle() {
       http
-        .get("/listings/" + this.state.searchTitle, {
+        .get("/api/listings/" + this.state.searchTitle, {
 
         })
         .then((response) => {
